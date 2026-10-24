@@ -26,7 +26,7 @@ export const igualA = (otroCampo, msg) =>
   (v, datos) => (v === datos[otroCampo] ? null : msg);
 
 // Contraseña: al menos una letra y un número
-export const letraYNumero = (msg = 'Incluye al menos una letra y un número.') =>
+export const letraYNumero = (msg = 'Usa al menos 8 caracteres, con una letra y un número.') =>
   (v) => (/(?=.*[A-Za-z])(?=.*\d)/.test(v) ? null : msg);
 
 // Checkbox marcado: FormData lo envía como 'on'; si no está marcado, no aparece
@@ -69,5 +69,7 @@ export function validarFormulario(datos) {
 
 // Un teléfono suelto (vacío cuenta como error: o lo escribe o lo quita)
 export function validarTelefono(valor) {
-  return requerido('Escribe el teléfono o quítalo.')(valor) ?? telefono()(valor.trim());
+  const numero = String(valor ?? '').trim();
+
+  return requerido('Escribe el teléfono o quítalo.')(numero) ?? telefono()(numero);
 }
