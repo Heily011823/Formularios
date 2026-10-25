@@ -64,3 +64,21 @@ input:focus, select:focus {
   border-color: var(--azul);
   background-color: #f0f7ff;
 }
+
+/* Pequeños ajustes de diseño */
+body {
+  background-color: #f8fafc;
+}
+
+input,
+select {
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #dbeafe;
+}
+
+button[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
