@@ -31,7 +31,14 @@ input:focus-visible, select:focus-visible, button:focus-visible {
 /* Nivel 4: el error se marca con el atributo que pone app.js */
 [aria-invalid="true"] { border: 2px solid var(--rojo); }
 
+/* Nivel 5: hacer más visibles los mensajes de error */
 .error { color: var(--rojo); min-height: 1.2em; margin: .2rem 0 0; font-size: .9rem; }
+
+.error:not(:empty) {
+  background-color: #fff2f2;
+  border-radius: 4px;
+  padding: .35rem;
+}
 
 fieldset { border: 1px solid #ccc; border-radius: 6px; margin-top: .75rem; padding: .5rem .75rem .75rem; }
 .fila-telefono { display: grid; grid-template-columns: 1fr auto; column-gap: .5rem; align-items: end; }
@@ -51,3 +58,9 @@ button[type="submit"] { margin-top: 1rem; padding: .7rem; background: var(--azul
 button:disabled { opacity: .6; cursor: not-allowed; }
 
 #mensaje, #saludo { font-weight: 600; }
+
+/* Nivel 5: destacar visualmente el campo seleccionado */
+input:focus, select:focus {
+  border-color: var(--azul);
+  background-color: #f0f7ff;
+}
